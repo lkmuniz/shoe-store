@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!--
+        I used Constraint Layout for this one because there ara many components, for a better organization i choose this.
+    -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".Login">
+
+        <EditText
+            android:id="@+id/edit_email"
+            style="@style/InputStyle"
+            android:hint="@string/insert_email"
+            android:inputType="textEmailAddress"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.496"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.177" />
+
+        <EditText
+            android:id="@+id/edit_password"
+            style="@style/InputStyle"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="56dp"
+            android:hint="@string/insert_password"
+            android:inputType="textPassword"
+            app:layout_constraintEnd_toEndOf="@+id/edit_email"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/edit_email"
+            app:layout_constraintTop_toBottomOf="@+id/edit_email" />
+
+        <Button
+            android:id="@+id/button_login"
+            style="@style/ButtonStyle"
+            android:text="@string/login"
+            app:layout_constraintEnd_toEndOf="@+id/edit_email"
+            app:layout_constraintStart_toStartOf="@+id/edit_email"
+            app:layout_constraintTop_toBottomOf="@+id/edit_password" />
+
+        <Button
+            android:id="@+id/button_createAccount"
+            style="@style/ButtonStyle"
+            android:text="@string/create_account"
+            app:layout_constraintEnd_toEndOf="@+id/edit_email"
+            app:layout_constraintStart_toStartOf="@+id/edit_email"
+            app:layout_constraintTop_toBottomOf="@+id/button_login" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
