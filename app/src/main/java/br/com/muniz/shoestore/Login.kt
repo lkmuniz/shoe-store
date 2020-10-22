@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import br.com.muniz.shoestore.databinding.FragmentLoginBinding
+import timber.log.Timber
 
 class Login : Fragment() {
 
