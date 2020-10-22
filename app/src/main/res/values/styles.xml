@@ -7,6 +7,7 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
+
     <style name="AppTheme.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
@@ -17,16 +18,35 @@
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
     <style name="InputStyle">
-       <item name="android:layout_width">@dimen/input_button_width</item>
-       <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">@dimen/input_button_width</item>
+        <item name="android:layout_height">wrap_content</item>
         <item name="android:textAlignment">center</item>
     </style>
 
     <style name="ButtonStyle">
-       <item name="android:layout_width">@dimen/input_button_width</item>
-       <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">@dimen/input_button_width</item>
+        <item name="android:layout_height">wrap_content</item>
         <item name="android:textAlignment">center</item>
         <item name="android:layout_marginTop">72dp</item>
+    </style>
+
+    <style name="HeaderTextStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textSize">28sp</item>
+        <item name="android:layout_marginTop">120dp</item>
+    </style>
+
+    <style name="WelcomeTextStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:layout_marginStart">16dp</item>
+        <item name="android:layout_marginEnd">16dp</item>
+        <item name="android:layout_marginTop">120dp</item>
+        <item name="android:textSize">28sp</item>
+        <item name="android:textStyle">bold</item>
     </style>
 
 </resources>

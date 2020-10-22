@@ -6,4 +6,7 @@
     <string name="insert_password">Insert your password</string>
     <string name="login">Login</string>
     <string name="create_account">Create Account</string>
+    <string name="welcome">Welcome</string>
+    <string name="welcome_text">Welcome to the Shoe Store!\nFind your new shoe here.</string>
+    <string name="check_out">Check out</string>
 </resources>
