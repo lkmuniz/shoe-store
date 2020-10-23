@@ -18,8 +18,8 @@ class Login : Fragment() {
 
     override fun onResume() {
         // if the user is already logged skip the login screen
-        if (viewModel.loginState.value!!)
-            goToWelcomeFragment()
+//        if (viewModel.loginState.value!!)
+//            goToWelcomeFragment()
 
         super.onResume()
     }

@@ -17,8 +17,18 @@
 
     <fragment
         android:id="@+id/welcome"
-        android:name="br.com.muniz.shoestore.Welcome"
+        android:name="br.com.muniz.shoestore.welcome.Welcome"
         android:label="Welcome"
-        tools:layout="@layout/fragment_welcome"/>
+        tools:layout="@layout/fragment_welcome">
+        <action
+            android:id="@+id/action_welcome_to_instruction"
+            app:destination="@id/instruction" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/instruction"
+        android:name="br.com.muniz.shoestore.Instruction"
+        android:label="Instruction"
+        tools:layout="@layout/fragment_instruction"/>
 
 </navigation>
