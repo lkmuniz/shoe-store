@@ -9,4 +9,7 @@
     <string name="welcome">Welcome</string>
     <string name="welcome_text">Welcome to the Shoe Store!\nFind your new shoe here.</string>
     <string name="check_out">Check out</string>
+    <string name="instruction_text">Instruction Text</string>
+    <string name="instruction">Instruction</string>
+    <string name="confirm">Confirm</string>
 </resources>

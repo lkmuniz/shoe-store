@@ -28,6 +28,7 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textAlignment">center</item>
         <item name="android:layout_marginTop">72dp</item>
+        <item name="layout_constraintVertical_bias">0.323</item>
     </style>
 
     <style name="HeaderTextStyle">
