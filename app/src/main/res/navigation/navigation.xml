@@ -7,8 +7,18 @@
 
     <fragment
         android:id="@+id/login"
-        android:name="br.com.muniz.shoestore.Login"
+        android:name="br.com.muniz.shoestore.login.Login"
         android:label="Login"
-        tools:layout="@layout/fragment_login"/>
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_login_to_welcome"
+            app:destination="@id/welcome" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/welcome"
+        android:name="br.com.muniz.shoestore.Welcome"
+        android:label="Welcome"
+        tools:layout="@layout/fragment_welcome"/>
 
 </navigation>
