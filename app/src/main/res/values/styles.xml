@@ -19,8 +19,14 @@
 
     <style name="InputStyle">
         <item name="android:layout_width">@dimen/input_button_width</item>
-        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_height">@dimen/input_button_height</item>
         <item name="android:textAlignment">center</item>
+        <item name="android:textColor">@color/colorPrimaryDark</item>
+        <item name="android:textColorHint">@color/colorPrimaryLight</item>
+        <item name="android:drawablePadding">@dimen/input_drawble_padding</item>
+        <item name="android:paddingStart">@dimen/input_padding_start</item>
+        <item name="android:paddingEnd">@dimen/input_padding_end</item>
+        <item name="android:background">@drawable/shape_input</item>
     </style>
 
     <style name="ButtonStyle">
@@ -28,7 +34,10 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textAlignment">center</item>
         <item name="android:layout_marginTop">72dp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:background">@drawable/shape_button</item>
         <item name="layout_constraintVertical_bias">0.323</item>
+
     </style>
 
     <style name="HeaderTextStyle">
@@ -56,4 +65,8 @@
         <item name="android:paddingLeft">16dp</item>
     </style>
 
+    <dimen name="input_button_height">60dp</dimen>
+    <dimen name="input_drawble_padding">12dp</dimen>
+    <dimen name="input_padding_start">12dp</dimen>
+    <dimen name="input_padding_end">12dp</dimen>
 </resources>
