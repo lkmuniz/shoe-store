@@ -27,7 +27,7 @@
 
     <fragment
         android:id="@+id/instruction"
-        android:name="br.com.muniz.shoestore.Instruction"
+        android:name="br.com.muniz.shoestore.instruction.Instruction"
         android:label="Instruction"
         tools:layout="@layout/fragment_instruction">
         <action
