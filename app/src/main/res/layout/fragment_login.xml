@@ -3,6 +3,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
+        <variable
+            name="loginViewModel"
+            type="br.com.muniz.shoestore.login.LoginViewModel" />
+    </data>
+
     <!--
         I used Constraint Layout for this one because there ara many components, for a better organization i choose this.
     -->
@@ -38,6 +44,7 @@
         <Button
             android:id="@+id/button_login"
             style="@style/ButtonStyle"
+            android:onClick="@{() -> loginViewModel.onClickLogin()}"
             android:text="@string/login"
             app:layout_constraintEnd_toEndOf="@+id/edit_email"
             app:layout_constraintStart_toStartOf="@+id/edit_email"
@@ -46,6 +53,7 @@
         <Button
             android:id="@+id/button_createAccount"
             style="@style/ButtonStyle"
+            android:onClick="@{() -> loginViewModel.onClickCreateAccount()}"
             android:text="@string/create_account"
             app:layout_constraintEnd_toEndOf="@+id/edit_email"
             app:layout_constraintStart_toStartOf="@+id/edit_email"

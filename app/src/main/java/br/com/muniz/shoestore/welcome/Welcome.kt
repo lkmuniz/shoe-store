@@ -6,6 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import br.com.muniz.shoestore.R
 import br.com.muniz.shoestore.databinding.FragmentWelcomeBinding
@@ -13,24 +15,32 @@ import br.com.muniz.shoestore.databinding.FragmentWelcomeBinding
 
 class Welcome : Fragment() {
 
+    private lateinit var viewModel: WelcomeViewModel
+
+    private lateinit var binding: FragmentWelcomeBinding
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        val binding = DataBindingUtil.inflate<FragmentWelcomeBinding>(
+        binding = DataBindingUtil.inflate(
             inflater, R.layout.fragment_welcome, container, false
         )
 
-        binding.buttonCheckout.setOnClickListener {
-            goToInstruction()
-        }
+        viewModel = ViewModelProvider(this).get(WelcomeViewModel::class.java)
+        viewModel.welcomeState.observe(viewLifecycleOwner, Observer { newState ->
+            if (newState)
+                goToInstruction()
+        })
+        binding.welcomeViewModel = viewModel
+
 
         return binding.root
     }
 
     // Navigates to instruction fragment
-    private fun goToInstruction() {
+    fun goToInstruction() {
         findNavController().navigate(R.id.action_welcome_to_instruction)
     }
 

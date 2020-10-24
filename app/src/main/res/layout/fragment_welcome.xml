@@ -2,6 +2,12 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
+    <data>
+
+        <variable
+            name="welcomeViewModel"
+            type="br.com.muniz.shoestore.welcome.WelcomeViewModel" />
+    </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -27,6 +33,7 @@
         <Button
             android:id="@+id/button_checkout"
             style="@style/ButtonStyle"
+            android:onClick="@{() -> welcomeViewModel.onClickCheckout()}"
             android:text="@string/check_out"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

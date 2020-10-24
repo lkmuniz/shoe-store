@@ -3,10 +3,15 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
+        <variable
+            name="instructionViewModel"
+            type="br.com.muniz.shoestore.instruction.InstructionViewModel" />
+    </data>
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".Instruction">
+        tools:context=".instruction.Instruction">
 
         <TextView
             android:id="@+id/textView2"
@@ -32,6 +37,7 @@
             android:id="@+id/button_confirm_instruction"
             style="@style/ButtonStyle"
             android:text="@string/confirm"
+            android:onClick="@{() -> instructionViewModel.onClickConfirmInstruction()}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@+id/textView2"
             app:layout_constraintStart_toStartOf="@+id/textView2"

@@ -13,10 +13,17 @@ class LoginViewModel : ViewModel() {
     val loginState: LiveData<Boolean>
         get() = _loginState
 
+    init {
+        _loginState.value = false
+    }
 
-    // A simple login check
-    fun verifyLogin(email: String, password: String) {
-        if (email.isNotEmpty() && password.isNotEmpty())
-            _loginState.value = IS_LOGGED
+    // In this case the login and create account button go to the same fragment
+    fun onClickLogin() {
+        _loginState.value = IS_LOGGED
+    }
+
+    // For further implementation
+    fun onClickCreateAccount() {
+        _loginState.value = IS_LOGGED
     }
 }
