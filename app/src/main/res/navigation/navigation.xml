@@ -39,6 +39,20 @@
         android:id="@+id/shoeList"
         android:name="br.com.muniz.shoestore.shoeList.ShoeList"
         android:label="ShoeList"
-        tools:layout="@layout/fragment_shoe_list" />
+        tools:layout="@layout/fragment_shoe_list" >
+        <action
+            android:id="@+id/action_shoeList_to_shoeDetails"
+            app:destination="@id/shoeDetails" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/shoeDetails"
+        android:name="br.com.muniz.shoestore.shoeDetails.ShoeDetail"
+        android:label="ShoeDetails"
+        tools:layout="@layout/fragment_shoe_details">
+        <argument
+            android:name="shoeItem"
+            app:argType="br.com.muniz.shoestore.models.Shoe" />
+    </fragment>
 
 </navigation>

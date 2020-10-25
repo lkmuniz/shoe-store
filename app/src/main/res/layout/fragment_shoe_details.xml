@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="detailViewModel"
+            type="br.com.muniz.shoestore.shoeDetails.ShoeDetailViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".shoeDetails.ShoeDetail">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.073" />
+
+        <TextView
+            android:id="@+id/text_shoe_name"
+            style="@style/HeaderTextStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="@{detailViewModel.shoeName}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/imageView"
+            app:layout_constraintStart_toStartOf="@+id/imageView"
+            app:layout_constraintTop_toBottomOf="@+id/imageView"
+            app:layout_constraintVertical_bias="0.0"
+            tools:text="Shoe Name" />
+
+        <TextView
+            android:id="@+id/text_shoe_company"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{detailViewModel.shoeCompany}"
+            android:textColor="@color/colorPrimaryLight"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/text_shoe_name"
+            app:layout_constraintStart_toStartOf="@+id/text_shoe_name"
+            app:layout_constraintTop_toBottomOf="@+id/text_shoe_name"
+            tools:text="Shoe Company" />
+
+        <TextView
+            android:id="@+id/text_shoe_size"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{@string/size_format(detailViewModel.shoeSize)}"
+            android:textColor="@color/colorPrimaryLight"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/text_shoe_company"
+            app:layout_constraintStart_toStartOf="@+id/text_shoe_company"
+            app:layout_constraintTop_toBottomOf="@+id/text_shoe_company"
+            tools:text="Size: 42" />
+
+        <TextView
+            style="@style/DescriptionBoxStyle"
+
+            android:text="@{detailViewModel.shoeDescription}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_shoe_company"
+            app:layout_constraintVertical_bias="0.076" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
