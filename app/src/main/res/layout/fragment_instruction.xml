@@ -26,7 +26,7 @@
 
         <TextView
             android:id="@+id/textView"
-            style="@style/HeaderTextStyle"
+            style="@style/WelcomeTextStyle"
             android:text="@string/instruction_text"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
@@ -36,12 +36,12 @@
         <Button
             android:id="@+id/button_confirm_instruction"
             style="@style/ButtonStyle"
-            android:text="@string/confirm"
             android:onClick="@{() -> instructionViewModel.onClickConfirmInstruction()}"
+            android:text="@string/confirm"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@+id/textView2"
             app:layout_constraintStart_toStartOf="@+id/textView2"
-            app:layout_constraintTop_toBottomOf="@+id/textView"/>
+            app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
