@@ -40,6 +40,7 @@ class ShoeList : Fragment() {
                 view.shoe_item_name.text = shoe.name
                 view.shoe_item_company.text = shoe.company
                 view.shoe_item_size.text = shoe.size.toString()
+                view.shoe_item_image.setImageResource(getResources().getIdentifier(shoe.images.get(0), "drawable", activity?.packageName))
                 view.setOnClickListener{
                     goToDetailFragment(shoe)
                 }

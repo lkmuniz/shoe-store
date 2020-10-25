@@ -1,6 +1,5 @@
 package br.com.muniz.shoestore.shoeDetails
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -33,5 +32,6 @@ class ShoeDetailViewModel(shoe: Shoe) : ViewModel() {
         _shoeCompany.value = shoe.company
         _shoeSize.value = shoe.size
         _shoeDescription.value = shoe.description
+        _shoeImages.value = shoe.images.get(0)
     }
 }

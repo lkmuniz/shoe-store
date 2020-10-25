@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import br.com.muniz.shoestore.R
 import br.com.muniz.shoestore.databinding.FragmentShoeDetailsBinding
@@ -30,6 +31,12 @@ class ShoeDetail : Fragment() {
         viewModelFactory = ShoeDetailFactory(args.shoeItem)
         viewModel = ViewModelProvider(this, viewModelFactory).get(ShoeDetailViewModel::class.java)
         binding.detailViewModel = viewModel
+
+        // Set imagem by resource name in the Shoe class
+        viewModel.shoeImages.observe(viewLifecycleOwner, Observer { newImage ->
+            var imageid = getResources().getIdentifier(newImage, "drawable", activity?.packageName)
+            binding.imageView.setImageResource(imageid)
+        })
 
         return binding.root
     }
