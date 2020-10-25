@@ -54,10 +54,22 @@
         <item name="android:textStyle">bold</item>
     </style>
 
+    <style name="ItemListTitleText">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingLeft">16dp</item>
+        <item name="android:textColor">@color/colorPrimaryDark</item>
+        <item name="android:textStyle">bold|italic</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
     <style name="ItemListText">
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:paddingLeft">16dp</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:textStyle">italic</item>
+        <item name="android:textSize">18sp</item>
     </style>
 
     <style name="DescriptionBoxStyle">
