@@ -1,11 +1,11 @@
-package br.com.muniz.shoestore.shoeList
+package br.com.muniz.shoestore.ui
 
 import android.os.Bundle
 import android.view.*
 import androidx.fragment.app.Fragment
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.NavigationUI
@@ -16,28 +16,32 @@ import br.com.muniz.shoestore.viewModel.ShoeListViewModel
 
 class ShoeList : Fragment() {
 
-    private lateinit var viewModel: ShoeListViewModel
+    private lateinit var binding: FragmentShoeListBinding
+
+    private val viewModel: ShoeListViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        val binding = DataBindingUtil.inflate<FragmentShoeListBinding>(
+        binding = DataBindingUtil.inflate(
             inflater, R.layout.fragment_shoe_list, container, false
         )
 
-        // get the viewModel from ViewModelProvider
-        viewModel = ViewModelProvider(this).get(ShoeListViewModel::class.java)
+        binding.lifecycleOwner = this
         binding.shoeList = this
+        binding.viewModel = viewModel
+
         // a observer to create populate the scrollview in any change
         viewModel.shoeList.observe(viewLifecycleOwner, Observer { newShoe ->
-            newShoe.forEach {
-                var newShoeLayout = DataBindingUtil.inflate<ShoeItemListLayoutBinding>(
-                    inflater, R.layout.shoe_item_list_layout, binding.shoeItemLayout, false
+
+            for (i in 0 until newShoe.size) {
+                val shoeBinding = DataBindingUtil.inflate<ShoeItemListLayoutBinding>(
+                    inflater, R.layout.shoe_item_list_layout, container, false
                 )
-                newShoeLayout.shoeItem = it
-                binding.shoeItemLayout.addView(newShoeLayout.root)
+                shoeBinding.shoeItem = newShoe[i]
+                binding.shoeListLayout.addView(shoeBinding.root)
             }
         })
 
