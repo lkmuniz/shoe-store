@@ -1,4 +1,4 @@
-package br.com.muniz.shoestore.welcome
+package br.com.muniz.shoestore.ui
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -15,8 +15,6 @@ import br.com.muniz.shoestore.databinding.FragmentWelcomeBinding
 
 class Welcome : Fragment() {
 
-    private lateinit var viewModel: WelcomeViewModel
-
     private lateinit var binding: FragmentWelcomeBinding
 
     override fun onCreateView(
@@ -28,13 +26,7 @@ class Welcome : Fragment() {
             inflater, R.layout.fragment_welcome, container, false
         )
 
-        viewModel = ViewModelProvider(this).get(WelcomeViewModel::class.java)
-        viewModel.welcomeState.observe(viewLifecycleOwner, Observer { newState ->
-            if (newState)
-                goToInstruction()
-        })
-        binding.welcomeViewModel = viewModel
-
+        binding.welcome = this
 
         return binding.root
     }
