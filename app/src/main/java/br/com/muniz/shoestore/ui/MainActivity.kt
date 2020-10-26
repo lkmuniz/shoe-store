@@ -1,15 +1,14 @@
-package br.com.muniz.shoestore
+package br.com.muniz.shoestore.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.databinding.DataBindingUtil
-import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.NavigationUI
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import br.com.muniz.shoestore.R
 import br.com.muniz.shoestore.databinding.ActivityMainBinding
 import timber.log.Timber
 
@@ -46,4 +45,6 @@ class MainActivity : AppCompatActivity() {
         val navController = this.findNavController(R.id.navHostFragment)
         return navController.navigateUp()
     }
+
+    fun getNavController(): NavController = navController
 }

@@ -6,8 +6,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
-import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import br.com.muniz.shoestore.R
 import br.com.muniz.shoestore.databinding.FragmentLoginBinding
@@ -25,6 +23,7 @@ class Login : Fragment() {
             inflater, R.layout.fragment_login, container, false
         )
 
+        binding.lifecycleOwner = this
         binding.login = this
 
         return binding.root

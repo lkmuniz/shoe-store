@@ -6,8 +6,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
-import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import br.com.muniz.shoestore.R
 import br.com.muniz.shoestore.databinding.FragmentWelcomeBinding
@@ -26,6 +24,7 @@ class Welcome : Fragment() {
             inflater, R.layout.fragment_welcome, container, false
         )
 
+        binding.lifecycleOwner = this
         binding.welcome = this
 
         return binding.root

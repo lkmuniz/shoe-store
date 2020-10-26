@@ -6,8 +6,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
-import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import br.com.muniz.shoestore.R
 import br.com.muniz.shoestore.databinding.FragmentInstructionBinding
@@ -21,10 +19,11 @@ class Instruction : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        binding = DataBindingUtil.inflate<FragmentInstructionBinding>(
+        binding = DataBindingUtil.inflate(
             inflater, R.layout.fragment_instruction, container, false
         )
 
+        binding.lifecycleOwner = this
         binding.instruction = this
 
         return binding.root
