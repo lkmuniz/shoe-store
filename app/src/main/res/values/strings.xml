@@ -14,4 +14,9 @@
     <string name="confirm">Confirm</string>
     <string name="size_format">Size: %,.1f</string>
     <string name="logout">Logout</string>
+    <string name="name">Name</string>
+    <string name="company">Company</string>
+    <string name="description">Description</string>
+    <string name="cancel">Cancel</string>
+    <string name="save">Save</string>
 </resources>

@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="input_button_width">250dp</dimen>
+    <dimen name="input_button_height">45dp</dimen>
+    <dimen name="detail_input_width">200dp</dimen>
+    <dimen name="detail_button_width">150dp</dimen>
+    <dimen name="detail_edit_width">250dp</dimen>
+    <dimen name="detail_edit_height">50dp</dimen>
 </resources>

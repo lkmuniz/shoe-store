@@ -10,70 +10,113 @@
             type="br.com.muniz.shoestore.shoeDetails.ShoeDetailViewModel" />
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".shoeDetails.ShoeDetail">
+        android:fillViewport="true">
 
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="200dp"
-            android:layout_height="200dp"
-            android:layout_marginTop="16dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.497"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.073" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".shoeDetails.ShoeDetail">
 
-        <TextView
-            android:id="@+id/text_shoe_name"
-            style="@style/HeaderTextStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            android:text="@{detailViewModel.shoeName}"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/imageView"
-            app:layout_constraintStart_toStartOf="@+id/imageView"
-            app:layout_constraintTop_toBottomOf="@+id/imageView"
-            app:layout_constraintVertical_bias="0.0"
-            tools:text="Shoe Name" />
+            <TextView
+                android:id="@+id/textView3"
+                style="@style/DetailHolderText"
+                android:text="@string/name"
+                app:layout_constraintBottom_toBottomOf="@+id/editText"
+                app:layout_constraintEnd_toStartOf="@+id/editText"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/editText"
+                tools:text="Name" />
 
-        <TextView
-            android:id="@+id/text_shoe_company"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@{detailViewModel.shoeCompany}"
-            android:textColor="@color/colorPrimaryLight"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="@+id/text_shoe_name"
-            app:layout_constraintStart_toStartOf="@+id/text_shoe_name"
-            app:layout_constraintTop_toBottomOf="@+id/text_shoe_name"
-            tools:text="Shoe Company" />
+            <EditText
+                android:id="@+id/editText"
+                style="@style/DetailInputStyle"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/textView3"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.055" />
 
-        <TextView
-            android:id="@+id/text_shoe_size"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@{@string/size_format(detailViewModel.shoeSize)}"
-            android:textColor="@color/colorPrimaryLight"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="@+id/text_shoe_company"
-            app:layout_constraintStart_toStartOf="@+id/text_shoe_company"
-            app:layout_constraintTop_toBottomOf="@+id/text_shoe_company"
-            tools:text="Size: 42" />
 
-        <TextView
-            style="@style/DescriptionBoxStyle"
+            <TextView
+                android:id="@+id/tv_company"
+                style="@style/DetailHolderText"
+                android:text="@string/company"
+                app:layout_constraintBottom_toBottomOf="@+id/editText2"
+                app:layout_constraintEnd_toStartOf="@+id/editText2"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/editText2" />
 
-            android:text="@{detailViewModel.shoeDescription}"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/text_shoe_company"
-            app:layout_constraintVertical_bias="0.076" />
+            <EditText
+                android:id="@+id/editText2"
+                style="@style/DetailInputStyle"
+                android:layout_marginTop="40dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/tv_company"
+                app:layout_constraintTop_toBottomOf="@+id/editText" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            <TextView
+                android:id="@+id/textView5"
+                style="@style/DetailHolderText"
+                android:text="Size"
+                app:layout_constraintBottom_toBottomOf="@+id/editText3"
+                app:layout_constraintEnd_toStartOf="@+id/editText3"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/editText3" />
+
+            <EditText
+                android:id="@+id/editText3"
+                style="@style/DetailInputStyle"
+                android:layout_marginTop="40dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/textView5"
+                app:layout_constraintTop_toBottomOf="@+id/editText2" />
+
+            <TextView
+                android:id="@+id/textView6"
+                style="@style/DetailHolderText"
+                android:text="@string/description"
+                app:layout_constraintBottom_toBottomOf="@+id/editText4"
+                app:layout_constraintEnd_toStartOf="@+id/editText4"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/editText4" />
+
+            <EditText
+                android:id="@+id/editText4"
+                style="@style/DetailInputStyle"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/textView6"
+                app:layout_constraintTop_toBottomOf="@+id/editText3" />
+
+
+            <Button
+                android:id="@+id/button2"
+                style="@style/DetailButtonStyle"
+                android:text="@string/cancel"
+                android:onClick="@{() -> detailViewModel.onClickCancel()}"
+                app:layout_constraintBottom_toBottomOf="@+id/button"
+                app:layout_constraintEnd_toStartOf="@+id/button"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/button" />
+
+            <Button
+                android:id="@+id/button"
+                style="@style/DetailButtonStyle"
+                android:text="@string/save"
+                android:onClick="@{() -> detailViewModel.onClickSave()}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/button2"
+                app:layout_constraintTop_toBottomOf="@+id/editText4" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 </layout>

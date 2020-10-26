@@ -23,6 +23,18 @@
         <item name="android:paddingStart">@dimen/input_padding_start</item>
         <item name="android:paddingEnd">@dimen/input_padding_end</item>
         <item name="android:background">@drawable/shape_input</item>
+        <item name="android:layout_marginTop">40dp</item>
+    </style>
+
+    <style name="DetailInputStyle">
+        <item name="android:layout_width">@dimen/detail_input_width</item>
+        <item name="android:layout_height">@dimen/input_button_height</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textColor">@color/colorPrimaryDark</item>
+        <item name="android:textColorHint">@color/colorPrimaryLight</item>
+        <item name="android:background">@drawable/shape_input</item>
+        <item name="android:layout_marginTop">40dp</item>
+        <item name="android:layout_marginRight">16dp</item>
     </style>
 
     <style name="ButtonStyle">
@@ -34,7 +46,14 @@
         <item name="android:textColor">@color/white</item>
         <item name="android:background">@drawable/shape_button</item>
         <item name="layout_constraintVertical_bias">0.323</item>
+    </style>
 
+    <style name="DetailButtonStyle">
+        <item name="android:layout_width">@dimen/detail_button_width</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:background">@drawable/shape_button</item>
     </style>
 
     <style name="HeaderTextStyle">
@@ -68,6 +87,16 @@
         <item name="android:textSize">20sp</item>
     </style>
 
+    <style name="DetailHolderText">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginRight">16dp</item>
+        <item name="android:textColor">@color/colorPrimaryDark</item>
+        <item name="android:textStyle">bold|italic</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textAlignment">center</item>
+    </style>
+
     <style name="ItemListText">
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_height">wrap_content</item>
@@ -87,7 +116,7 @@
         <item name="android:layout_marginTop">64dp</item>
     </style>
 
-    <dimen name="input_button_height">60dp</dimen>
+
     <dimen name="input_drawble_padding">12dp</dimen>
     <dimen name="input_padding_start">12dp</dimen>
     <dimen name="input_padding_end">12dp</dimen>
