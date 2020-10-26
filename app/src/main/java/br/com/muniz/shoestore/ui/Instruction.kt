@@ -18,7 +18,7 @@ class Instruction : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
+        // Inflate and binding the layout for this fragment
         binding = DataBindingUtil.inflate(
             inflater, R.layout.fragment_instruction, container, false
         )
@@ -29,6 +29,7 @@ class Instruction : Fragment() {
         return binding.root
     }
 
+    // Navigate to ShoeList Fragment
     fun goToShoeList() {
         findNavController().navigate(R.id.action_instruction_to_shoeList)
     }

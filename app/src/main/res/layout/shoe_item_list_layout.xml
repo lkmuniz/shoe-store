@@ -11,6 +11,8 @@
             type="br.com.muniz.shoestore.models.Shoe" />
     </data>
 
+    <!-- Simple layout, with text views and images.
+    LinearLayout with vertical orientation also would work here -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

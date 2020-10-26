@@ -27,6 +27,7 @@ class MainActivity : AppCompatActivity() {
         initToolbar()
     }
 
+    // Init the Toolbar and set the ShoeList the top level
     private fun initToolbar() {
         setSupportActionBar(binding.toolbar)
         val appBarConfiguration = AppBarConfiguration(

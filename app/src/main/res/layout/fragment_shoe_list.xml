@@ -12,7 +12,7 @@
             name="viewModel"
             type="br.com.muniz.shoestore.viewModel.ShoeListViewModel" />
     </data>
-
+    <!-- A Constrain Layout to hold the scrollview and Floating Action Button -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">

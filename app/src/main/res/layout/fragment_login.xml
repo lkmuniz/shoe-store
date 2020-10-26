@@ -16,7 +16,7 @@
         android:fillViewport="true">
 
         <!--
-            I used Constraint Layout for this one because there ara many components, for a better organization i choose this.
+            I used Constraint Layout for this one because there are many components, for a better organization i choose this.
         -->
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"

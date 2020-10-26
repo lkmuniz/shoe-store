@@ -34,6 +34,7 @@ class ShoeDetail : BaseFragment() {
         return binding.root
     }
 
+    // Get the shoe from binding, send to viewModel add in the list and navigate back to last fragment
     fun addShoe() {
         viewModel.addShoe(binding.newShoe)
         navController.navigateUp()

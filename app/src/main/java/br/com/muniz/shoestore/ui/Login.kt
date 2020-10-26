@@ -18,7 +18,7 @@ class Login : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
+        // Inflate and binding the layout for this fragment
         binding = DataBindingUtil.inflate(
             inflater, R.layout.fragment_login, container, false
         )
@@ -29,7 +29,7 @@ class Login : Fragment() {
         return binding.root
     }
 
-    // Calls the Welcome Fragment
+    // Navigate to Welcome Fragment
     fun goToWelcomeFragment() {
         findNavController().navigate(R.id.action_login_to_welcome)
     }

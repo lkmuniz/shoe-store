@@ -20,6 +20,7 @@
         android:layout_height="match_parent"
         android:fillViewport="true">
 
+        <!-- A complex layout with many text views and edit texts, so contraint is better in this casa -->
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
