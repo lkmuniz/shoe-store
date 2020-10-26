@@ -5,13 +5,13 @@
 
     <data>
         <variable
-            name="instructionViewModel"
-            type="br.com.muniz.shoestore.instruction.InstructionViewModel" />
+            name="instruction"
+            type="br.com.muniz.shoestore.ui.Instruction" />
     </data>
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".instruction.Instruction">
+        tools:context=".ui.Instruction">
 
         <TextView
             android:id="@+id/textView2"
@@ -36,7 +36,7 @@
         <Button
             android:id="@+id/button_confirm_instruction"
             style="@style/ButtonStyle"
-            android:onClick="@{() -> instructionViewModel.onClickConfirmInstruction()}"
+            android:onClick="@{() -> instruction.goToShoeList()}"
             android:text="@string/confirm"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@+id/textView2"

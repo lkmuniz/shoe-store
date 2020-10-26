@@ -1,4 +1,4 @@
-package br.com.muniz.shoestore.instruction
+package br.com.muniz.shoestore.ui
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -14,8 +14,6 @@ import br.com.muniz.shoestore.databinding.FragmentInstructionBinding
 
 class Instruction : Fragment() {
 
-    private lateinit var viewModel: InstructionViewModel
-
     private lateinit var binding: FragmentInstructionBinding
 
     override fun onCreateView(
@@ -27,22 +25,12 @@ class Instruction : Fragment() {
             inflater, R.layout.fragment_instruction, container, false
         )
 
-        viewModel = ViewModelProvider(this).get(InstructionViewModel::class.java)
-        binding.instructionViewModel = viewModel
-
-        viewModel.instructionState.observe(viewLifecycleOwner, Observer { newState ->
-            if (newState)
-                goToShoeList()
-        })
-
-        binding.buttonConfirmInstruction.setOnClickListener {
-            goToShoeList()
-        }
+        binding.instruction = this
 
         return binding.root
     }
 
-    private fun goToShoeList() {
+    fun goToShoeList() {
         findNavController().navigate(R.id.action_instruction_to_shoeList)
     }
 
