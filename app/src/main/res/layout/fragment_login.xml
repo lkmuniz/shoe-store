@@ -5,8 +5,8 @@
 
     <data>
         <variable
-            name="loginViewModel"
-            type="br.com.muniz.shoestore.login.LoginViewModel" />
+            name="login"
+            type="br.com.muniz.shoestore.ui.Login" />
     </data>
 
     <!--
@@ -15,7 +15,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".login.Login">
+        tools:context=".ui.Login">
 
         <EditText
             android:id="@+id/edit_email"
@@ -45,7 +45,7 @@
         <Button
             android:id="@+id/button_login"
             style="@style/ButtonStyle"
-            android:onClick="@{() -> loginViewModel.onClickLogin()}"
+            android:onClick="@{() -> login.goToWelcomeFragment()}"
             android:text="@string/login"
             app:layout_constraintEnd_toEndOf="@+id/edit_email"
             app:layout_constraintStart_toStartOf="@+id/edit_email"
@@ -54,7 +54,7 @@
         <Button
             android:id="@+id/button_createAccount"
             style="@style/ButtonStyle"
-            android:onClick="@{() -> loginViewModel.onClickCreateAccount()}"
+            android:onClick="@{() -> login.goToWelcomeFragment()}"
             android:text="@string/create_account"
             app:layout_constraintEnd_toEndOf="@+id/edit_email"
             app:layout_constraintStart_toStartOf="@+id/edit_email"

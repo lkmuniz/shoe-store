@@ -17,7 +17,6 @@ class ShoeDetail : Fragment() {
 
     private lateinit var binding: FragmentShoeDetailsBinding
     private lateinit var viewModel: ShoeDetailViewModel
-    private lateinit var viewModelFactory: ShoeDetailFactory
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -26,17 +25,9 @@ class ShoeDetail : Fragment() {
 
         binding =
             DataBindingUtil.inflate(inflater, R.layout.fragment_shoe_details, container, false)
-        var args = ShoeDetailArgs.fromBundle(requireArguments())
 
-        viewModelFactory = ShoeDetailFactory(args.shoeItem)
-        viewModel = ViewModelProvider(this, viewModelFactory).get(ShoeDetailViewModel::class.java)
+        viewModel = ViewModelProvider(this).get(ShoeDetailViewModel::class.java)
         binding.detailViewModel = viewModel
-
-        // Set imagem by resource name in the Shoe class
-        viewModel.shoeImages.observe(viewLifecycleOwner, Observer { newImage ->
-            var imageid = getResources().getIdentifier(newImage, "drawable", activity?.packageName)
-            binding.imageView.setImageResource(imageid)
-        })
 
         return binding.root
     }

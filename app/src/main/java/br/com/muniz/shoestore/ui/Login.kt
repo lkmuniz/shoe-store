@@ -1,4 +1,4 @@
-package br.com.muniz.shoestore.login
+package br.com.muniz.shoestore.ui
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -14,8 +14,6 @@ import br.com.muniz.shoestore.databinding.FragmentLoginBinding
 
 class Login : Fragment() {
 
-    private lateinit var viewModel: LoginViewModel
-
     private lateinit var binding: FragmentLoginBinding
 
     override fun onCreateView(
@@ -27,21 +25,13 @@ class Login : Fragment() {
             inflater, R.layout.fragment_login, container, false
         )
 
-        // get the view model from ViewModelProvider
-        viewModel = ViewModelProvider(this).get(LoginViewModel::class.java)
-        binding.loginViewModel = viewModel
-
-        viewModel.loginState.observe(viewLifecycleOwner, Observer { newLoginState ->
-            // if log in successfully goes to Welcome Fragment
-            if (newLoginState)
-                goToWelcomeFragment()
-        })
+        binding.login = this
 
         return binding.root
     }
 
     // Calls the Welcome Fragment
-    private fun goToWelcomeFragment() {
+    fun goToWelcomeFragment() {
         findNavController().navigate(R.id.action_login_to_welcome)
     }
 

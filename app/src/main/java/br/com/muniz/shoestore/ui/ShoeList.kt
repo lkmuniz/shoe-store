@@ -12,7 +12,7 @@ import androidx.navigation.ui.NavigationUI
 import br.com.muniz.shoestore.R
 import br.com.muniz.shoestore.databinding.FragmentShoeListBinding
 import br.com.muniz.shoestore.databinding.ShoeItemListLayoutBinding
-import br.com.muniz.shoestore.models.Shoe
+import br.com.muniz.shoestore.viewModel.ShoeListViewModel
 
 class ShoeList : Fragment() {
 
@@ -29,7 +29,7 @@ class ShoeList : Fragment() {
 
         // get the viewModel from ViewModelProvider
         viewModel = ViewModelProvider(this).get(ShoeListViewModel::class.java)
-
+        binding.shoeList = this
         // a observer to create populate the scrollview in any change
         viewModel.shoeList.observe(viewLifecycleOwner, Observer { newShoe ->
             newShoe.forEach {
@@ -47,8 +47,8 @@ class ShoeList : Fragment() {
     }
 
     // Navigate to Detail Fragment passing a shoe in safe args
-    private fun goToDetailFragment(shoe: Shoe) {
-            findNavController().navigate(ShoeListDirections.actionShoeListToShoeDetails(shoe))
+    fun goToDetailFragment() {
+            findNavController().navigate(ShoeListDirections.actionShoeListToShoeDetails())
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
