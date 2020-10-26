@@ -6,16 +6,18 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.ViewModelProvider
 import br.com.muniz.shoestore.R
 import br.com.muniz.shoestore.databinding.FragmentShoeDetailsBinding
-import br.com.muniz.shoestore.shoeDetails.ShoeDetailViewModel
+import br.com.muniz.shoestore.models.Shoe
+import br.com.muniz.shoestore.viewModel.ShoeListViewModel
 
-class ShoeDetail : Fragment() {
-
+class ShoeDetail : BaseFragment() {
 
     private lateinit var binding: FragmentShoeDetailsBinding
-    private lateinit var viewModel: ShoeDetailViewModel
+
+    private val viewModel: ShoeListViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -25,10 +27,20 @@ class ShoeDetail : Fragment() {
         binding =
             DataBindingUtil.inflate(inflater, R.layout.fragment_shoe_details, container, false)
 
-        viewModel = ViewModelProvider(this).get(ShoeDetailViewModel::class.java)
-        binding.detailViewModel = viewModel
+        binding.lifecycleOwner = this
+        binding.details = this
+        binding.newShoe = Shoe("", 0.0, "", "")
 
         return binding.root
+    }
+
+    fun addShoe() {
+        viewModel.addShoe(binding.newShoe)
+        navController.navigateUp()
+    }
+
+    fun cancel() {
+        navController.navigateUp()
     }
 
 }

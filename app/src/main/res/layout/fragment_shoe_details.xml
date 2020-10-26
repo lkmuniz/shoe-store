@@ -4,10 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+        <import type="br.com.muniz.shoestore.viewModel.ShoeListViewModel.Converter"/>
 
         <variable
-            name="detailViewModel"
-            type="br.com.muniz.shoestore.shoeDetails.ShoeDetailViewModel" />
+            name="details"
+            type="br.com.muniz.shoestore.ui.ShoeDetail" />
+
+        <variable
+            name="newShoe"
+            type="br.com.muniz.shoestore.models.Shoe" />
     </data>
 
     <ScrollView
@@ -34,6 +39,7 @@
             <EditText
                 android:id="@+id/editText"
                 style="@style/DetailInputStyle"
+                android:text="@={newShoe.name}"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
@@ -55,6 +61,7 @@
             <EditText
                 android:id="@+id/editText2"
                 style="@style/DetailInputStyle"
+                android:text="@={newShoe.company}"
                 android:layout_marginTop="40dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/tv_company"
@@ -74,6 +81,7 @@
                 android:id="@+id/editText3"
                 style="@style/DetailInputStyle"
                 android:layout_marginTop="40dp"
+                android:text="@={Converter.doubleToString(newShoe.size)}"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/textView5"
                 app:layout_constraintTop_toBottomOf="@+id/editText2" />
@@ -91,6 +99,7 @@
             <EditText
                 android:id="@+id/editText4"
                 style="@style/DetailInputStyle"
+                android:text="@={newShoe.description}"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toEndOf="@+id/textView6"
@@ -101,7 +110,7 @@
                 android:id="@+id/button2"
                 style="@style/DetailButtonStyle"
                 android:text="@string/cancel"
-                android:onClick="@{() -> detailViewModel.onClickCancel()}"
+                android:onClick="@{() -> details.cancel()}"
                 app:layout_constraintBottom_toBottomOf="@+id/button"
                 app:layout_constraintEnd_toStartOf="@+id/button"
                 app:layout_constraintStart_toStartOf="parent"
@@ -111,7 +120,7 @@
                 android:id="@+id/button"
                 style="@style/DetailButtonStyle"
                 android:text="@string/save"
-                android:onClick="@{() -> detailViewModel.onClickSave()}"
+                android:onClick="@{() -> details.addShoe()}"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/button2"
