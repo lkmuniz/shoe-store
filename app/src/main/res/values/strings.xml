@@ -7,10 +7,11 @@
     <string name="login">Login</string>
     <string name="create_account">Create Account</string>
     <string name="welcome">Welcome</string>
-    <string name="welcome_text">Welcome to the Shoe Store!\nFind your new shoe here.</string>
+    <string name="welcome_text">Welcome to the Shoe Store!\nManage your shoe stock here.</string>
     <string name="check_out">Check out</string>
-    <string name="instruction_text">Instruction Text</string>
+    <string name="instruction_text">Start adding your shoes and keep them on control.</string>
     <string name="instruction">Instruction</string>
+    <string name="instructionTitle">Get Ready!</string>
     <string name="confirm">Confirm</string>
     <string name="size_format">Size: %,.1f</string>
     <string name="logout">Logout</string>

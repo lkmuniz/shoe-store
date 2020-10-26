@@ -39,7 +39,7 @@
             <EditText
                 android:id="@+id/editText"
                 style="@style/DetailInputStyle"
-                android:text="@={newShoe.name}"
+                android:text="@={Converter.trim(newShoe.name)}"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
@@ -61,7 +61,7 @@
             <EditText
                 android:id="@+id/editText2"
                 style="@style/DetailInputStyle"
-                android:text="@={newShoe.company}"
+                android:text="@={Converter.trim(newShoe.company)}"
                 android:layout_marginTop="40dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/tv_company"
@@ -81,6 +81,7 @@
                 android:id="@+id/editText3"
                 style="@style/DetailInputStyle"
                 android:layout_marginTop="40dp"
+                android:inputType="numberDecimal"
                 android:text="@={Converter.doubleToString(newShoe.size)}"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/textView5"
@@ -99,7 +100,8 @@
             <EditText
                 android:id="@+id/editText4"
                 style="@style/DetailInputStyle"
-                android:text="@={newShoe.description}"
+                android:maxLines="2"
+                android:text="@={Converter.trim(newShoe.description)}"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toEndOf="@+id/textView6"

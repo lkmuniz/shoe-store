@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
@@ -18,17 +19,26 @@
             style="@style/HeaderTextStyle"
             android:text="@string/welcome"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            style="@style/ImageStyle"
+            android:src="@drawable/ic_welcome"
+            app:layout_constraintEnd_toEndOf="@+id/text_header"
+            app:layout_constraintStart_toStartOf="@+id/text_header"
+            app:layout_constraintTop_toBottomOf="@+id/text_header" />
 
         <TextView
             android:id="@+id/text_welcome"
             style="@style/BodyTextStyle"
             android:text="@string/welcome_text"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/text_header" />
+            app:layout_constraintEnd_toEndOf="@+id/text_header"
+            app:layout_constraintHorizontal_bias="0.925"
+            app:layout_constraintStart_toStartOf="@+id/text_header"
+            app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
         <Button
             android:id="@+id/button_checkout"
@@ -36,10 +46,10 @@
             android:onClick="@{() -> welcome.goToInstruction()}"
             android:text="@string/check_out"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.496"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/text_welcome" />
+            app:layout_constraintEnd_toEndOf="@+id/text_header"
+            app:layout_constraintStart_toStartOf="@+id/text_header"
+            app:layout_constraintTop_toBottomOf="@+id/text_welcome"
+            app:layout_constraintVertical_bias="0.156" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

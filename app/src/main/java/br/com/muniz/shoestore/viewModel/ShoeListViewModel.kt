@@ -33,10 +33,16 @@ class ShoeListViewModel : ViewModel() {
         @JvmStatic
         fun stringToDouble(value: String): Double? {
             return if (value.isNotEmpty()) {
-                value.toDouble()
+                value.trim().toDouble()
             } else {
                 0.0
             }
+        }
+
+        @InverseMethod("trim")
+        @JvmStatic
+        fun trim(string: String): String? {
+            return string.replace("\n"," ").trim()
         }
     }
 }
